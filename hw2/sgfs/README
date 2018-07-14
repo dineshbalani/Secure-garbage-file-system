@@ -1,5 +1,6 @@
-# Secure-garbage-file-system
-Developed a stackable file system to asynchronously delete and move the files to a trash bin. Files in trash bin folder are secured, compressed, encrypted and can be restored by user.
+CSE-506 (Spring 2018) Homework Assignment #2
+Name: Dinesh Balani
+ID: 111500275
 
 * PURPOSE:
 
@@ -49,35 +50,6 @@ $ PATH_TOSGCTL/sgctl -u FILE
 
 FILE: the file's name to undelete
 -u: option to "undelete"
-
-*LIST OF FILES ADDED:
-
-/usr/src/hw2-user/fs/sgfs
-	-dentry.c
-	-file.c(modified)
-	-inode.c(modified)
-	-lookup.c
-	-main.c(modified)
-	-sgfs.h(modified)
-	-mmap.c
-	-sgfs.mod.c
-	-super.c
-
-/usr/src/hw2-user/hw2
-	-README(modified)
-	-sgctl.c
-	-Makefile
-	-kernel.config
-
-/usr/src/hw2-user/
-	-compile.sh
-
-Other files modified
-
-magic.h(modified)
-fs/Kconfig(modified)
-fs/Makefile(modfied)
-
 
 
 * DETAILS(Algorithm)
@@ -134,22 +106,4 @@ IV. To List the files in .sg folder
 - Create a global struct dir_context and store the context received in this global variable.
 - Create another new struct dir_context with actor function pointing to my_filldir()
 	my_filldir()
-	- from the file name check if the file owner(first 4 bytes) is same as current user.
-	- If it is same 
-	- call and the actor of the original context using global dir_context 
-	- Else return 0
-- If ls is issued in .sg folder
-	- the call iterdir with new dir_context
-- Else call iterdir with the old dir_context
-
-
-
-
-REFERENCES:-
-
-https://elixir.bootlin.com/linux/v3.2.29/source/fs/char_dev.c
-http://lxr.fsl.cs.sunysb.edu/linux/source/kernel/audit.c#L1658
-https://github.com/richygerard/file-encryption-decryption/
-
-
-
+	- from the file name check if the file owner(

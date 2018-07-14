@@ -1,0 +1,1 @@
+cmd_fs/sgfs//sgfs.o := ld -m elf_x86_64   -r -o fs/sgfs//sgfs.o fs/sgfs//dentry.o fs/sgfs//file.o fs/sgfs//inode.o fs/sgfs//main.o fs/sgfs//super.o fs/sgfs//lookup.o fs/sgfs//mmap.o ; scripts/mod/modpost fs/sgfs//sgfs.o
